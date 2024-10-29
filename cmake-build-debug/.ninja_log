@@ -1,19 +1,11 @@
 # ninja log v6
 1	27	1729762482568410140	CMakeFiles/libft.dir/src/ft_isascii.c.o	a666566dc5ab319a
-25	32	1729762847877944735	liblibft.a	6cad5d0fa5da2b73
-1	27	1729762482568410140	CMakeFiles/libft.dir/src/ft_isdigit.c.o	29282f5149416480
-1	27	1729762482568410140	CMakeFiles/libft.dir/src/ft_isalpha.c.o	7739d966afa68498
-1	27	1729762482568410140	CMakeFiles/libft.dir/src/ft_isprint.c.o	f053fed5d5a23094
-6	25	1729762847861944668	CMakeFiles/libft.dir/src/ft_strlen.c.o	92f32866652d1db0
-1	27	1729762482568410140	CMakeFiles/libft.dir/src/ft_isalnum.c.o	341c9457505a22dd
-31	38	1729758322075034172	libLibFT.a	d8182a40e9acc555
-5	27	1729763063294847752	build.ninja	b040c7b5b8fa5d65
-5	31	1729763526636799324	CMakeFiles/libft.dir/src/ft_strlen.c.o	92f32866652d1db0
-4	33	1729763526632799308	CMakeFiles/libft.dir/src/ft_isalnum.c.o	341c9457505a22dd
-0	17	1729763544188873408	CMakeFiles/libft.dir/src/ft_memset.c.o	bf61c63e3729eda9
-17	24	1729763544208873493	liblibft.a	736a95d22f006671
-5	28	1729763944982566919	CMakeFiles/libft.dir/src/ft_isalpha.c.o	7739d966afa68498
-5	28	1729763944982566919	CMakeFiles/libft.dir/src/ft_isdigit.c.o	29282f5149416480
-5	30	1729763944982566919	CMakeFiles/libft.dir/src/ft_isalnum.c.o	341c9457505a22dd
-6	31	1729763944986566935	CMakeFiles/libft.dir/src/ft_memset.c.o	bf61c63e3729eda9
 31	42	1729763945010567038	liblibft.a	736a95d22f006671
+5	28	1729763944982566919	CMakeFiles/libft.dir/src/ft_isdigit.c.o	29282f5149416480
+5	28	1729763944982566919	CMakeFiles/libft.dir/src/ft_isalpha.c.o	7739d966afa68498
+1	27	1729762482568410140	CMakeFiles/libft.dir/src/ft_isprint.c.o	f053fed5d5a23094
+5	31	1729763526636799324	CMakeFiles/libft.dir/src/ft_strlen.c.o	92f32866652d1db0
+5	30	1729763944982566919	CMakeFiles/libft.dir/src/ft_isalnum.c.o	341c9457505a22dd
+31	38	1729758322075034172	libLibFT.a	d8182a40e9acc555
+5	27	1730210516862455572	build.ninja	b040c7b5b8fa5d65
+6	31	1729763944986566935	CMakeFiles/libft.dir/src/ft_memset.c.o	bf61c63e3729eda9

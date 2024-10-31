@@ -6,7 +6,7 @@
 /*   By: mwelfrin <mwelfrin@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:44:23 by mwelfrin          #+#    #+#             */
-/*   Updated: 2024/10/24 11:58:01 by mwelfrin         ###   ########.fr       */
+/*   Updated: 2024/10/31 10:39:55 by mwelfrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@ int ft_memset(void *p, int c, size_t len) {
     }
     return 0;
 }
-int main(void) {
+/*
+int main(void)
+{
     unsigned char *p = (unsigned char *)0x12345678;
     printf("%p\n", p);
     printf("%p\n", &p);
     return (0);
-}
+}*/

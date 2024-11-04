@@ -3,28 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mwelfrin <mwelfrin@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mwelfrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 15:01:12 by mwelfrin          #+#    #+#             */
-/*   Updated: 2024/11/03 21:58:09 by meriza           ###   ########.fr       */
+/*   Created: 2024/11/04 13:38:36 by mwelfrin          #+#    #+#             */
+/*   Updated: 2024/11/04 13:38:55 by mwelfrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char)) {
-    if (!s || !f) // Eğer string veya fonksiyon NULL ise
-        return NULL;
 
-    size_t len = ft_strlen(s);
-    char *result = (char *)malloc(len + 1); // Yeni string için bellek ayır
-    if (!result) // Bellek ayırma hatası kontrolü
-        return NULL;
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	char			*result;
+	unsigned int	i;
 
-    unsigned int i = 0;
-    while (i < len) {
-        result[i] = f(i, s[i]); // Her karaktere f fonksiyonunu uygula
-        i++;
-    }
-    result[len] = '\0'; // Null terminatör ekle
-
-    return result; // Yeni oluşturulan stringi döndür
+	if (!s || !f)
+		return (NULL);
+	result = (char *)malloc(ft_strlen(s) + 1);
+	if (!result)
+		return (NULL);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		result[i] = f(i, s[i]);
+		i++;
+	}
+	result[i] = '\0';
+	return (result);
 }

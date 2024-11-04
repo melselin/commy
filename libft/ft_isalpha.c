@@ -6,18 +6,12 @@
 /*   By: meriza <meriza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 19:31:04 by meriza            #+#    #+#             */
-/*   Updated: 2024/11/02 22:45:30 by meriza           ###   ########.fr       */
+/*   Updated: 2024/11/04 09:25:18 by mwelfrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-//#include <stdio.h>
 #include "libft.h"
-int ft_isalpha(int c)
+
+int	ft_isalpha(int c)
 {
-    return((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }
-/*int main() {
-    printf("%i\n",ft_isalpha('d'));
-    return (0);
-}*/

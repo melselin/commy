@@ -6,62 +6,78 @@
 /*   By: mwelfrin <mwelfrin@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 14:58:51 by mwelfrin          #+#    #+#             */
-/*   Updated: 2024/11/03 22:12:58 by meriza           ###   ########.fr       */
+/*   Updated: 2024/11/04 13:19:26 by mwelfrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
-static int count_words(const char *s, char c) {
-    int count = 0;
-    int in_word = 0;
+/*#include "libft.h"
 
-    while (*s) {
-        if (*s != c && !in_word) {
-            in_word = 1; // Yeni bir kelimeye başlıyoruz
+static int	count_words(const char *s, char c)
+{
+    int	count = 0;
+    int	in_word = 0;
+
+    while (*s)
+    {
+        if (*s != c && !in_word)
+        {
+            in_word = 1;
             count++;
-        } else if (*s == c) {
-            in_word = 0; // Kelimenin sonuna geldik
         }
+        else if (*s == c)
+            in_word = 0;
         s++;
     }
-    return count;
+    return (count);
 }
 
-static char *get_word(const char *s, char c) {
-    size_t len = 0;
-    while (s[len] && s[len] != c) {
-        len++;
-    }
-    char *word = (char *)malloc(len + 1);
-    if (word) {
-        strncpy(word, s, len);
-        word[len] = '\0'; // Null terminator ekle
-    }
-    return word;
+// Yardımcı fonksiyon: belirli uzunluktaki bir kelimeyi kopyalar.
+static char	*copy_word(const char *start, int len)
+{
+    char	*word;
+
+    word = (char *)malloc((len + 1) * sizeof(char));
+    if (!word)
+        return (NULL);
+    for (int i = 0; i < len; i++)
+        word[i] = start[i];
+    word[len] = '\0';
+    return (word);
 }
 
-char **ft_split(char const *s, char c) {
-    if (!s) return NULL;
-
-    int word_count = count_words(s, c);
-    char **result = (char **)malloc((word_count + 1) * sizeof(char *));
-    if (!result) return NULL; // Bellek ayırma hatası
-
-    int i = 0;
-    while (*s) {
-        if (*s != c) {
-            result[i] = get_word(s, c);
-            if (!result[i]) {
-                while (i > 0) { // Önceki allocated kelimeleri serbest bırak
-                    free(result[--i]);
-                }
-                free(result); // Diziyi serbest bırak
-                return NULL;
-            }
-            i++;
+// ft_split fonksiyonu: verilen stringi belirli bir ayırıcıya göre böler.
+char	**ft_split(char const *s, char c)
+{
+    if (!s)
+        return (NULL);
+    int	words = count_words(s, c);
+    char	**result = (char **)malloc((words + 1) * sizeof(char *));
+    if (!result)
+        return (NULL);
+    int	i = 0;
+    while (*s)
+    {
+        if (*s != c)
+        {
+            const char	*word_start = s;
+            int	word_len = 0;
             while (*s && *s != c)
-                s++; // Kelimeyi geç
-            s++; // Ayırıcıyı geç
+            {
+                word_len++;
+                s++;
+            }
+            result[i] = copy_word(word_start, word_len);
+            if (!result[i++])
+            {
+                // Hata durumunda, bellekteki yerleri serbest bırak.
+                while (i > 0)
+                    free(result[--i]);
+                free(result);
+                return (NULL);
+            }
+        }
+        else
+            s++;
     }
-    result[i] = NULL; // Dizinin sonuna NULL ekle
-    return result;
-}
+    result[i] = NULL; // Dizinin sonuna NULL ekleyin.
+    return (result);
+}*/

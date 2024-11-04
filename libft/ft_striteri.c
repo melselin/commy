@@ -3,20 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mwelfrin <mwelfrin@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mwelfrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 15:01:56 by mwelfrin          #+#    #+#             */
-/*   Updated: 2024/11/03 22:00:14 by meriza           ###   ########.fr       */
+/*   Created: 2024/11/04 13:30:05 by mwelfrin          #+#    #+#             */
+/*   Updated: 2024/11/04 13:30:23 by mwelfrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-void ft_striteri(char *s, void (*f)(unsigned int, char*)) {
-    if (!s || !f) // Eğer string veya fonksiyon NULL ise
-        return;
 
-    unsigned int i = 0; // İndeks değişkeni
-    while (s[i] != '\0') { // Stringin sonuna kadar git
-        f(i, &s[i]); // İndeksi ve karakterin adresini fonksiyona gönder
-        i++; // İndeksi artır
-    }
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	unsigned int	i;
+
+	if (!s || !f)
+		return ;
+	i = 0;
+	while (s[i] != '\0')
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }

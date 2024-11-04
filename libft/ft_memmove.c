@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memmove.c                                          :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mwelfrin <mwelfrin@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mwelfrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 08:07:09 by mwelfrin          #+#    #+#             */
-/*   Updated: 2024/11/03 12:05:02 by meriza           ###   ########.fr       */
+/*   Created: 2024/11/04 13:11:51 by mwelfrin          #+#    #+#             */
+/*   Updated: 2024/11/04 13:13:01 by mwelfrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-void    *ft_memmove(void *dest, const void *src, size_t n)
+
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-unsigned char   *d = dest;
-const unsigned char *s = src;
+	unsigned char			*d;
+	const unsigned char		*s;
+	size_t					i;
 
-if (d < s) {
-    size_t  i = 0;
-    while (i < n) {
-        d[i] = s[i];
-        i++;
-    }
-} else {
-    size_t i = n;
-    while (i > 0) {
-        d[i - 1] = s[i - 1];
-        i--;
-    }
-}
-
-return dest;
+	d = (unsigned char *)dest;
+	s = (const unsigned char *)src;
+	if (d < s)
+	{
+		i = 0;
+		while (i < n)
+		{
+			d[i] = s[i];
+			i++;
+		}
+	}
+	else
+	{
+		i = n;
+		while (i > 0)
+		{
+			d[i - 1] = s[i - 1];
+			i--;
+		}
+	}
+	return (dest);
 }

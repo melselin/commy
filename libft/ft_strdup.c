@@ -3,42 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mwelfrin <mwelfrin@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mwelfrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 13:18:14 by mwelfrin          #+#    #+#             */
-/*   Updated: 2024/11/03 20:47:23 by meriza           ###   ########.fr       */
+/*   Created: 2024/11/04 13:28:53 by mwelfrin          #+#    #+#             */
+/*   Updated: 2024/11/04 13:28:59 by mwelfrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include "libft.h"
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mwelfrin <mwelfrin@student.1337.ma>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 13:18:14 by mwelfrin          #+#    #+#             */
-/*   Updated: 2024/10/29 13:18:14 by mwelfrin         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-#include "libft.h"
-char    *ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
-    size_t  len = ft_strlen(s);
+	size_t	len;
+	char	*copy;
+	size_t	i;
 
-    char    *copy = (char *)malloc((len + 1) * sizeof(char));
-
-    if (copy == NULL) {
-        return NULL;
-    }
-
-    size_t  i = 0;
-    while (i < len) {
-        copy[i] = s[i];
-        i++;
-    }
-    copy[i] = '\0';
-
-    return copy;
+	len = ft_strlen(s);
+	copy = (char *)malloc((len + 1) * sizeof(char));
+	if (copy == NULL)
+	{
+		return (NULL);
+	}
+	i = 0;
+	while (i < len)
+	{
+		copy[i] = s[i];
+		i++;
+	}
+	copy[i] = '\0';
+	return (copy);
 }

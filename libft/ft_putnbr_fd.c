@@ -3,24 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mwelfrin <mwelfrin@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mwelfrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/31 09:27:10 by mwelfrin          #+#    #+#             */
-/*   Updated: 2024/11/03 22:07:42 by meriza           ###   ########.fr       */
+/*   Created: 2024/11/04 10:26:41 by mwelfrin          #+#    #+#             */
+/*   Updated: 2024/11/04 13:02:41 by mwelfrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-void ft_putnbr_fd(int n, int fd) {
-    if (n < 0) {
-        write(fd, "-", 1); // Negatif sayılarda '-' işareti yaz
-        n = -n; // Sayıyı pozitif yap
-    }
 
-    if (n >= 10) { // 10'dan büyükse
-        ft_putnbr_fd(n / 10, fd); // Rekürsif olarak ondalık basamağı yaz
-    }
+void	ft_putnbr_fd(int n, int fd)
+{
+	char	c;
 
-    // Son basamağı yaz
-    char c = (n % 10) + '0'; // Son basamağı karaktere dönüştür
-    write(fd, &c, 1); // Son basamağı yaz
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n = -n;
+	}
+	if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+	}
+	c = (n % 10) + '0';
+	write(fd, &c, 1);
 }

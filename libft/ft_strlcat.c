@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlcat.c                                          :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mwelfrin <mwelfrin@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mwelfrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 10:31:49 by mwelfrin          #+#    #+#             */
-/*   Updated: 2024/11/03 13:34:01 by meriza           ###   ########.fr       */
+/*   Created: 2024/11/04 13:35:02 by mwelfrin          #+#    #+#             */
+/*   Updated: 2024/11/04 13:35:16 by mwelfrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-size_t  ft_strlcat(char *dest, const char *src, size_t size) {
-    size_t  dest_len = ft_strlen(dest);
-    size_t  src_len = ft_strlen(src);
-    size_t  i = 0;
 
-    if (size == 0) {
-        return src_len;
-    }
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
+{
+	size_t	dest_len;
+	size_t	src_len;
+	size_t	i;
 
-    if (dest_len >= size) {
-        return size + src_len;
-    }
-
-    while (i < size - dest_len - 1 && src[i] != '\0') {
-        dest[dest_len + i] = src[i];
-        i++;
-    }
-
-    dest[dest_len + i] = '\0';
-
-    return dest_len + src_len;
+	dest_len = ft_strlen(dest);
+	src_len = ft_strlen(src);
+	i = 0;
+	if (size == 0)
+		return (src_len);
+	if (dest_len >= size)
+		return (size + src_len);
+	while (i < size - dest_len - 1 && src[i] != '\0')
+	{
+		dest[dest_len + i] = src[i];
+		i++;
+	}
+	dest[dest_len + i] = '\0';
+	return (dest_len + src_len);
 }

@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strchr.c                                           :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mwelfrin <mwelfrin@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mwelfrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 10:49:15 by mwelfrin          #+#    #+#             */
-/*   Updated: 2024/11/03 13:46:14 by meriza           ###   ########.fr       */
+/*   Created: 2024/11/04 13:22:53 by mwelfrin          #+#    #+#             */
+/*   Updated: 2024/11/04 13:23:02 by mwelfrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-char    *ft_strchr(const char *s, int c)
+
+char	*ft_strchr(const char *s, int c)
 {
-    while (*s)
-    {
-        if (*s == (char)c)
-        {
-            return (char *)s;
-        }
-        s++;
-    }
-    if (c == '\0')
-    {
-        return (char *)s;
-    }
-    return NULL;
+	while (*s)
+	{
+		if (*s == (char)c)
+		{
+			return ((char *)s);
+		}
+		s++;
+	}
+	if (c == '\0')
+	{
+		return ((char *)s);
+	}
+	return (NULL);
 }

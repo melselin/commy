@@ -3,43 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mwelfrin <mwelfrin@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mwelfrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 14:39:00 by mwelfrin          #+#    #+#             */
-/*   Updated: 2024/11/03 21:05:54 by meriza           ###   ########.fr       */
+/*   Created: 2024/11/04 13:33:42 by mwelfrin          #+#    #+#             */
+/*   Updated: 2024/11/04 13:33:47 by mwelfrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-char    *ft_strjoin(char const *s1, char const *s2)
+
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-    char    *joined_str;
-    size_t  len1, len2, i, j;
+	char	*joined_str;
+	size_t	len1;
+	size_t	len2;
+	size_t	i;
 
-    // Eğer s1 veya s2 NULL ise, NULL döndür.
-    if (!s1 || !s2)
-        return NULL;
-
-    len1 = ft_strlen(s1);  // İlk stringin uzunluğunu al
-    len2 = ft_strlen(s2);  // İkinci stringin uzunluğunu al
-
-    // Birleşim için gereken bellek alanını ayır (s1 uzunluğu + s2 uzunluğu + '\0' için +1)
-    joined_str = (char *)malloc(len1 + len2 + 1);
-    if (!joined_str)  // Bellek ayrımı başarısızsa NULL döndür
-        return NULL;
-    // İlk stringi joined_str'e kopyala
-    i = 0;
-    while (i < len1) {
-        joined_str[i] = s1[i];
-        i++;
-    }
-    // İkinci stringi joined_str'e ekle
-    j = 0;
-    while (j < len2) {
-        joined_str[i + j] = s2[j];
-        j++;
-    }
-
-    joined_str[i + j] = '\0';  // Null-terminator ekle
-
-    return joined_str;
+	if (!s1 || !s2)
+		return (NULL);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	joined_str = (char *)malloc(len1 + len2 + 1);
+	if (!joined_str)
+		return (NULL);
+	i = -1;
+	while (++i < len1)
+		joined_str[i] = s1[i];
+	while (i - len1 < len2)
+	{
+		joined_str[i] = s2[i - len1];
+		i++;
+	}
+	joined_str[i] = '\0';
+	return (joined_str);
 }

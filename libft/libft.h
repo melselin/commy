@@ -6,7 +6,7 @@
 /*   By: mwelfrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:46:02 by mwelfrin          #+#    #+#             */
-/*   Updated: 2024/11/04 13:46:14 by mwelfrin         ###   ########.fr       */
+/*   Updated: 2024/11/06 15:15:06 by mwelfrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -14,6 +14,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+# include <stddef.h>
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);

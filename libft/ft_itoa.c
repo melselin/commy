@@ -5,15 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mwelfrin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 13:48:07 by mwelfrin          #+#    #+#             */
-/*   Updated: 2024/11/04 13:48:14 by mwelfrin         ###   ########.fr       */
+/*   Created: 2024/11/06 10:57:54 by mwelfrin          #+#    #+#             */
+/*   Updated: 2024/11/06 10:58:04 by mwelfrin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 static int	get_num_length(int n)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	if (n <= 0)
@@ -24,6 +24,16 @@ static int	get_num_length(int n)
 		len++;
 	}
 	return (len);
+}
+
+static void	handle_negative(int *n, char *str, int *len)
+{
+	if (*n == -2147483648)
+	{
+		str[--(*len)] = '8';
+		*n /= 10;
+	}
+	*n = -*n;
 }
 
 char	*ft_itoa(int n)
@@ -41,12 +51,7 @@ char	*ft_itoa(int n)
 	else if (n < 0)
 	{
 		str[0] = '-';
-		if (n == -2147483648)
-		{
-			str[--len] = '8';
-			n /= 10;
-		}
-		n = -n;
+		handle_negative(&n, str, &len);
 	}
 	while (n)
 	{

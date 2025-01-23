@@ -73,5 +73,4 @@ int	ft_putnbr(int n);
 int	ft_putunbr(unsigned int n);
 int	ft_puthex(unsigned int n, char specifier);
 int	ft_putptr(void *p);
-
 #endif

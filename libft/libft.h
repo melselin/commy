@@ -15,6 +15,13 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stddef.h>
+# include <stdarg.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+# define MAX_FD 1024
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
@@ -50,5 +57,20 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-
+char	*get_next_line(int fd);
+char	*extract_line(char *buffer);
+char	*prepare_buffer(char *buffer);
+char	*read_to_buffer(int fd, char *buffer);
+size_t	f_strlen(const char *s);
+char	*f_strjoin(char *s1, char *s2);
+void	*f_memcpy(void *dst, const void *src, size_t n);
+char	*f_strchr(const char *s, int c);
+void	*f_calloc(size_t count, size_t size);
+int	ft_printf(const char *format, ...);
+int	ft_putchar(char c);
+int	ft_putstr(char *s);
+int	ft_putnbr(int n);
+int	ft_putunbr(unsigned int n);
+int	ft_puthex(unsigned int n, char specifier);
+int	ft_putptr(void *p);
 #endif

@@ -10,11 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
+# Program adı ve derleme ayarları
 NAME    = libft.a
 CC      = gcc
 CFLAGS  = -Wall -Wextra -Werror
 AR      = ar rcs
 
+# Kaynak dosyalar
 SRC     = \
     ft_atoi.c \
     ft_bzero.c \
@@ -49,40 +51,42 @@ SRC     = \
     ft_strtrim.c \
     ft_substr.c \
     ft_tolower.c \
-    ft_toupper.c
+    ft_toupper.c \
+    get_next_line.c \
+    get_next_line_utils.c \
+    ft_printf.c \
+    ft_putchar.c \
+    ft_putstr.c \
+    ft_putnbr.c \
+    ft_putunbr.c \
+    ft_puthex.c \
+    ft_putptr.c
 
-# Objeler
-OBJ     = $(SRC:.c=.o)
+# Objelerin oluşturulacağı dosyalar
+OBJ	= $(SRC:.c=.o)
 
-# Derleme hedefi
-all:    $(NAME)
+# Varsayılan hedef
+all: $(NAME)
 
-# Arşiv (library) oluşturma
+# Kütüphane oluşturma
 $(NAME): $(OBJ)
 	$(AR) $@ $^
 
-# Objeler için derleme kuralı
+# .c dosyalarını .o dosyalarına derleme kuralı
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# Temizleme hedefi
+# Objeleri temizleme
 clean:
 	rm -f $(OBJ)
 
-# Arşivi ve objeleri tamamen silme
+# Kütüphaneyi ve objeleri tamamen temizleme
 fclean: clean
 	rm -f $(NAME)
 
-# Yeniden derleme
+# Temizleme ve yeniden derleme
 re: fclean all
 
-# Paylaşımlı kütüphane oluşturma
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	$(CC) -nostartfiles -shared -o libft.so $(OBJ)
+# .PHONY kuralları, belirli hedeflerin dosya isimleriyle çakışmasını önler
+.PHONY: all clean fclean re
 
-# Test için libft.a kütüphanesini bağlamak (link etmek)
-test:
-	clang++ -o ft_strnstr_test ft_strnstr_test.cpp -L. -lft
-
-.PHONY: all clean fclean re so test

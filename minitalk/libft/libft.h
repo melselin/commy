@@ -66,11 +66,11 @@ char	*f_strjoin(char *s1, char *s2);
 void	*f_memcpy(void *dst, const void *src, size_t n);
 char	*f_strchr(const char *s, int c);
 void	*f_calloc(size_t count, size_t size);
-int	ft_printf(const char *format, ...);
-int	ft_putchar(char c);
-int	ft_putstr(char *s);
-int	ft_putnbr(int n);
-int	ft_putunbr(unsigned int n);
-int	ft_puthex(unsigned int n, char specifier);
-int	ft_putptr(void *p);
+int		ft_printf(const char *format, ...);
+int		ft_putchar(char c);
+int		ft_putstr(char *s);
+int		ft_putnbr(int n);
+int		ft_putunbr(unsigned int n);
+int		ft_puthex(unsigned int n, char specifier);
+int		ft_putptr(void *p);
 #endif

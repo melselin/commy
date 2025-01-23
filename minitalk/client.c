@@ -1,28 +1,50 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   client.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mwelfrin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/23 16:20:47 by mwelfrin          #+#    #+#             */
+/*   Updated: 2025/01/23 16:21:03 by mwelfrin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "minitalk.h"
 
-void send_char(int pid, char c) {
-    for (int i = 7; i >= 0; i--) {
-        if (c & (1 << i))
-            kill(pid, SIGUSR2);
-        else
-            kill(pid, SIGUSR1);
-        usleep(300);
-    }
+void	send_char(int pid, char c)
+{
+	int	i;
+
+	i = 7;
+	while (i >= 0)
+	{
+		if (c & (1 << i))
+			kill(pid, SIGUSR2);
+		else
+			kill(pid, SIGUSR1);
+		usleep(300);
+		i--;
+	}
 }
 
-int main(int argc, char **argv) {
-    if (argc != 3) {
-        write(1, "Usage: ./client [PID] [Message]\n", 32);
-        return 1;
-    }
+int	main(int argc, char **argv)
+{
+	int		pid;
+	char	*message;
+	int		i;
 
-    int pid = ft_atoi(argv[1]);
-    char *message = argv[2];
-
-    for (int i = 0; message[i]; i++) {
-        send_char(pid, message[i]);
-    }
-
-    return 0;
+	if (argc != 3)
+	{
+		write(1, "Usage: ./client [PID] [Message]\n", 32);
+		return (1);
+	}
+	pid = ft_atoi(argv[1]);
+	message = argv[2];
+	i = 0;
+	while (message[i])
+	{
+		send_char(pid, message[i]);
+		i++;
+	}
+	return (0);
 }
-

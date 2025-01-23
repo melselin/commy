@@ -6,7 +6,7 @@ void send_char(int pid, char c) {
             kill(pid, SIGUSR2);
         else
             kill(pid, SIGUSR1);
-        usleep(100);
+        usleep(300);
     }
 }
 

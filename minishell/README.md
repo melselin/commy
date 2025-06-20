@@ -1,5 +1,7 @@
 # 🖥️ MiniShell
 
+✅ `Finished`
+
 ```text
            🌸＞　　フ   										      
 　　　　　  | 　_　 _									          

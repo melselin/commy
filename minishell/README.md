@@ -1,6 +1,6 @@
 # 🖥️ MiniShell
 
-✅ `Finished`
+❌ `Not Finished Yet`
 
 ```text
            🌸＞　　フ   										      
